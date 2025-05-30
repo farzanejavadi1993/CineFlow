@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watchlist_error_message">There are no movies in favorites.</string>
+    <string name="remove_from_watchlist">Remove from watchlist</string>
+</resources>

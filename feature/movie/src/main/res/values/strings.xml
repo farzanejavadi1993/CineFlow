@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_detail_title">Movie Detail</string>
+    <string name="back_button">Back</string>
+    <string name="release_date">Release Date: %1$s</string>
+    <string name="rating">Rating: %1$.1f</string>
+    <string name="remove_from_watchlist">Remove from watchlist ❤️</string>
+    <string name="add_to_watchlist">Add to watchlist 🤍</string>
+    <string name="etc">… </string>
+</resources>

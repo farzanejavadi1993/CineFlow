@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="11">
+      <module name="CineFlow.core.ui" target="21" />
+      <module name="CineFlow.database" target="21" />
+      <module name="CineFlow.movie" target="21" />
+      <module name="CineFlow.network" target="21" />
+      <module name="CineFlow.trending" target="21" />
+      <module name="CineFlow.ui" target="21" />
+      <module name="CineFlow.watchlist" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

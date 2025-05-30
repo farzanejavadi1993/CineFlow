@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trending_movie_error_message">There is no movie to show.</string>
+</resources>
