@@ -80,3 +80,9 @@ sync & run
 
 This project is for learning purposes only and not affiliated with TMDB.
 
+Linkedin :farzanehjavadi 
+💛 GitHub: farzanejavadi1993 
+📩 Email: farzane.javadi1993@gmail.com
+
+
+
