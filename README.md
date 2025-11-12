@@ -33,11 +33,10 @@ Unit & UI testing
 ├── app
 ├── core
 │   ├── common
-│   ├── database
-│   ├── domain
-│   ├── model
-│   ├── network
 │   └── testutils
+├── dataa
+│   ├── database
+│   ├── network
 ├── feature
 │   ├── trending
 │   ├── movie
