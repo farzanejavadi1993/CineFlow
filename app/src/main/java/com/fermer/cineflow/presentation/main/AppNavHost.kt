@@ -8,15 +8,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.fermer.movie.presentation.detail.MovieDetailScreen
+import com.fermer.movie.presentation.MovieDetailScreen
 import com.fermer.cineflow.presentation.home.HomeScreen
 import com.fermer.cineflow.presentation.splash.SplashScreen
 import com.fermer.common.theme.ThemePreferenceManager
+import com.fermer.domain.model.Movie
 import kotlinx.serialization.json.Json
 
 @Composable
 fun AppNavHost(navController: NavHostController = rememberNavController(),
-               themeManager: ThemePreferenceManager) {
+               themeManager: ThemePreferenceManager
+) {
     NavHost(
         navController = navController,
         startDestination = "splash"
@@ -28,15 +30,24 @@ fun AppNavHost(navController: NavHostController = rememberNavController(),
             HomeScreen(navController,themeManager)
         }
 
-        composable(
+        /*composable(
             "movie_detail/{movieArgs}",
             arguments = listOf(navArgument("movieArgs") { type = NavType.StringType })
         ) { backStackEntry ->
             val json = backStackEntry.arguments?.getString("movieArgs") ?: return@composable
-            val movieArgs = Json.decodeFromString<com.fermer.model.Movie>(Uri.decode(json))
+            val movieArgs = Json.decodeFromString<Movie>(Uri.decode(json))
 
-            MovieDetailScreen(navController,movie = movieArgs)
+            MovieDetailScreen(navController, movieId = )
+        }*/
+
+        composable(
+            "movie_detail/{movieId}",
+            arguments = listOf(navArgument("movieId") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val movieId = backStackEntry.arguments?.getInt("movieId") ?: return@composable
+            MovieDetailScreen(navController, movieId = movieId)
         }
+
 
     }
 }

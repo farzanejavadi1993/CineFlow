@@ -57,9 +57,8 @@ dependencies {
 
     kapt(libs.hilt.android.compiler)
 
-    implementation(project(":core:model"))
-    implementation(project(":core:domain"))
-    implementation(project(":core:database"))
+    implementation(project(":domain"))
+    implementation(project(":dataa"))
 
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.test.manifest)

@@ -2,10 +2,13 @@ package com.fermer.movie.presentation.state
 
 
 import app.cash.turbine.test
-import com.fermer.domain.usecase.watchlist.AddToWatchlistUseCase
-import com.fermer.domain.usecase.watchlist.IsInWatchlistUseCase
-import com.fermer.domain.usecase.watchlist.RemoveFromWatchlistUseCase
-import com.fermer.model.Movie
+import com.fermer.domain.model.Movie
+import com.fermer.domain.usecase.AddToWatchlistUseCase
+import com.fermer.domain.usecase.GetMovieUseCase
+import com.fermer.domain.usecase.IsInWatchlistUseCase
+import com.fermer.domain.usecase.RemoveFromWatchlistUseCase
+import com.fermer.movie.presentation.MovieDetailViewModel
+import com.fermer.movie.state.MovieDetailState
 import com.fermer.testutils.MainDispatcherRule
 import io.mockk.*
 import kotlinx.coroutines.test.runTest
@@ -22,20 +25,31 @@ class MovieDetailViewModelTest {
     private lateinit var addToWatchlist: AddToWatchlistUseCase
     private lateinit var removeFromWatchlist: RemoveFromWatchlistUseCase
     private lateinit var isInWatchlist: IsInWatchlistUseCase
+    private lateinit var getMovieUseCase: GetMovieUseCase
     private lateinit var viewModel: MovieDetailViewModel
 
-    private val testMovie = Movie(1, "Interstellar", "2014-11-07", "/poster.jpg", 8.5, "")
+    private val testMovie = Movie(
+        1,
+        "Interstellar",
+        "2014-11-07",
+        "/poster.jpg",
+        8.5,
+        ""
+    )
+
 
     @Before
     fun setUp() {
         addToWatchlist = mockk(relaxed = true)
         removeFromWatchlist = mockk(relaxed = true)
         isInWatchlist = mockk()
+        getMovieUseCase = mockk()
 
         viewModel = MovieDetailViewModel(
             addToWatchlist,
             removeFromWatchlist,
-            isInWatchlist
+            isInWatchlist,
+            getMovieUseCase
         )
     }
 
@@ -45,9 +59,11 @@ class MovieDetailViewModelTest {
 
         viewModel.checkWatchlist(1)
 
-        viewModel.isSaved.test {
-            assertEquals(true, awaitItem())
+        viewModel.state.test {
+            assertEquals(MovieDetailState(movie = Movie(0), isSaved = true),
+                awaitItem())
             cancel()
+
         }
     }
 
@@ -58,9 +74,12 @@ class MovieDetailViewModelTest {
 
         viewModel.toggleWatchlist(testMovie)
 
-        viewModel.isSaved.test {
+        viewModel.state.test {
             awaitItem() // for checkWatchlist
-            assertEquals(true, awaitItem()) // after add
+            assertEquals(
+                MovieDetailState(movie = Movie(0), isSaved = true),
+                awaitItem()
+            ) // after add
             cancel()
         }
 
@@ -74,9 +93,12 @@ class MovieDetailViewModelTest {
         viewModel.checkWatchlist(1)
         viewModel.toggleWatchlist(testMovie)
 
-        viewModel.isSaved.test {
+        viewModel.state.test {
             awaitItem() // for checkWatchlist
-            assertEquals(false, awaitItem()) // after remove
+            assertEquals(
+                MovieDetailState(movie = Movie(0), isSaved = false),
+                awaitItem()
+            )// after remove
             cancel()
         }
 

@@ -1,15 +1,17 @@
 package com.fermer.watchlist.presentation.state
 
 import app.cash.turbine.test
+import com.fermer.domain.model.Movie
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
 
 
-import com.fermer.domain.usecase.watchlist.GetWatchlistUseCase
-import com.fermer.domain.usecase.watchlist.RemoveFromWatchlistUseCase
-import com.fermer.model.Movie
+import com.fermer.domain.usecase.GetWatchlistUseCase
+import com.fermer.domain.usecase.RemoveFromWatchlistUseCase
 import com.fermer.testutils.MainDispatcherRule
+import com.fermer.watchlist.WatchlistIntent
+import com.fermer.watchlist.presentation.WatchlistViewModel
 import io.mockk.*
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
@@ -29,8 +31,22 @@ class WatchlistViewModelTest {
     private lateinit var viewModel: WatchlistViewModel
 
     private val fakeMovies = listOf(
-        Movie(1, "Fight Club", "1999-10-15", "/poster1.jpg",6.5,""),
-        Movie(2, "Inception", "2010-07-16", "/poster2.jpg",7.2,"")
+        Movie(
+            1,
+            "Fight Club",
+            "1999-10-15",
+            "/poster1.jpg",
+            6.5,
+            ""
+        ),
+        Movie(
+            2,
+            "Inception",
+            "2010-07-16",
+            "/poster2.jpg",
+            7.2,
+            ""
+        )
     )
 
     @Before
@@ -94,6 +110,6 @@ class WatchlistViewModelTest {
 
             cancel()
         }
-}
+    }
 
 }

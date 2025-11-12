@@ -3,9 +3,9 @@ package com.fermer.watchlist.presentaion.favorites
 
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
-import com.fermer.model.Movie
-import com.fermer.watchlist.presentation.state.WatchlistState
-import com.fermer.watchlist.presentation.favorites.WatchlistItem
+import com.fermer.domain.model.Movie
+import com.fermer.watchlist.state.WatchlistState
+import com.fermer.watchlist.component.WatchlistItem
 import org.junit.Rule
 import org.junit.Test
 
@@ -16,8 +16,10 @@ class WatchlistItemTest {
 
     @Test
     fun item_shows_movie_title_and_date() {
-        val movie = Movie(1, "فیلم تستی", "/poster.jpg", "توضیح تست",
-            7.0, "2023-12-31")
+        val movie = Movie(
+            1, "فیلم تستی", "/poster.jpg", "توضیح تست",
+            7.0, "2023-12-31"
+        )
 
         composeTestRule.setContent {
             WatchlistItem(
@@ -34,8 +36,10 @@ class WatchlistItemTest {
     @Test
     fun clicking_item_triggers_onClick() {
         var clicked = false
-        val movie = Movie(1, "فیلم کلیکی", "/poster.jpg", "...",
-            6.9, "2023-11-11")
+        val movie = Movie(
+            1, "فیلم کلیکی", "/poster.jpg", "...",
+            6.9, "2023-11-11"
+        )
 
         composeTestRule.setContent {
             WatchlistItem(
@@ -52,8 +56,9 @@ class WatchlistItemTest {
     @Test
     fun clicking_heart_icon_triggers_onRemove() {
         var removed = false
-        val movie = Movie(1, "فیلم حذف‌شونده", "/poster.jpg", "desc"
-            , 6.5, "2023-10-10")
+        val movie = Movie(
+            1, "فیلم حذف‌شونده", "/poster.jpg", "desc", 6.5, "2023-10-10"
+        )
 
         composeTestRule.setContent {
             WatchlistItem(
@@ -85,8 +90,23 @@ class WatchlistItemTest {
     @Test
     fun display_movies_when_state_has_movies() {
         val movies = listOf(
-            Movie(1, "فیلم تستی ۱", "/poster1.jpg", "توضیح", 7.1, "2023-01-01"),
-            Movie(2, "فیلم تستی ۲", "/poster2.jpg", "توضیح", 6.8, "2023-02-02")
+            Movie(
+                1,
+                "فیلم تستی ۱",
+                "/poster1.jpg",
+                "توضیح",
+                7.1,
+                "2023-01-01"
+            ),
+
+            Movie(
+                2,
+                "فیلم تستی ۲",
+                "/poster2.jpg",
+                "توضیح",
+                6.8,
+                "2023-02-02"
+            )
         )
         val state = WatchlistState(movies = movies, isLoading = false)
 

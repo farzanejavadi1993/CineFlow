@@ -1,0 +1,9 @@
+package com.fermer.domain.usecase
+
+import com.fermer.domain.repository.WatchlistRepository
+
+class IsInWatchlistUseCase(
+    private val repository: WatchlistRepository
+) {
+    suspend operator fun invoke(id: Int): Boolean = repository.isInWatchlist(id)
+}

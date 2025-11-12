@@ -1,7 +1,7 @@
 package com.fermer.watchlist.presentation.state
 
-import com.fermer.domain.usecase.watchlist.WatchlistRepository
-import com.fermer.model.Movie
+import com.fermer.domain.model.Movie
+import com.fermer.domain.repository.WatchlistRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 

@@ -14,8 +14,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.fermer.cineflow.R
 import com.fermer.common.theme.ThemePreferenceManager
-import com.fermer.trending.presentation.trendinglist.TrendingScreen
-import com.fermer.watchlist.presentation.favorites.WatchlistScreen
+import com.fermer.trending.presentation.TrendingScreen
+import com.fermer.watchlist.presentation.WatchlistScreen
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

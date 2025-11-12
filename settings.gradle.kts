@@ -21,14 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "CineFlow"
 include(":app")
-include(":core:model")
 include(":core:common")
-include(":core:domain")
-include(":core:database")
-include(":core:network")
+include(":domain")
 include(":feature:trending")
 include(":feature:watchlist")
 include(":feature:movie")
-
-
 include(":core:testutils")
+include(":dataa")

@@ -77,7 +77,7 @@ dependencies {
     implementation(project(":feature:watchlist"))
     implementation(project(":feature:movie"))
     implementation(project(":core:common"))
-    implementation(project(":core:model"))
+    implementation(project(":domain"))
 
     androidTestImplementation(libs.androidx.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)

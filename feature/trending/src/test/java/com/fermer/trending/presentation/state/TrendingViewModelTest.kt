@@ -2,9 +2,11 @@ package com.fermer.trending.presentation.state
 
 
 import app.cash.turbine.test
-import com.fermer.domain.usecase.trending.GetTrendingMoviesUseCase
-import com.fermer.model.Movie
+import com.fermer.domain.model.Movie
+import com.fermer.domain.usecase.GetTrendingMoviesUseCase
 import com.fermer.testutils.MainDispatcherRule
+import com.fermer.trending.TrendingIntent
+import com.fermer.trending.presentation.TrendingViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,8 +26,22 @@ class TrendingViewModelTest {
     private lateinit var viewModel: TrendingViewModel
 
     private val fakeMovies = listOf(
-        Movie(1, "Interstellar", "2014-11-07", "/poster1.jpg", 8.6, ""),
-        Movie(2, "Oppenheimer", "2023-07-21", "/poster2.jpg", 9.0, "")
+        Movie(
+            1,
+            "Interstellar",
+            "2014-11-07",
+            "/poster1.jpg",
+            8.6,
+            ""
+        ),
+        Movie(
+            2,
+            "Oppenheimer",
+            "2023-07-21",
+            "/poster2.jpg",
+            9.0,
+            ""
+        )
     )
 
     @Before

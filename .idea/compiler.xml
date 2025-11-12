@@ -2,7 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
+      <module name="CineFlow.core.database" target="21" />
+      <module name="CineFlow.core.network" target="21" />
       <module name="CineFlow.core.ui" target="21" />
+      <module name="CineFlow.data.database" target="21" />
+      <module name="CineFlow.data.network" target="21" />
       <module name="CineFlow.database" target="21" />
       <module name="CineFlow.movie" target="21" />
       <module name="CineFlow.network" target="21" />

@@ -2,13 +2,13 @@ package com.fermer.trending.presentation.trendinglist
 
 
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
-import com.fermer.trending.presentation.state.TrendingState
+import com.fermer.trending.component.TrendingItem
+import com.fermer.trending.state.TrendingState
 
 @Composable
 fun TrendingScreenFake(state: TrendingState) {
@@ -21,9 +21,9 @@ fun TrendingScreenFake(state: TrendingState) {
         }
         else -> {
             LazyColumn {
-                items(state.movies) { movie ->
+                items(state.movies.size) { item ->
                     TrendingItem(
-                        movie = movie,
+                        movie = state.movies[item],
                         onClick = {}
                     )
                 }

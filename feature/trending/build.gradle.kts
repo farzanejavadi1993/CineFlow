@@ -51,9 +51,8 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
-    implementation(project(":core:model"))
-    implementation(project(":core:domain"))
-    implementation(project(":core:network"))
+    implementation(project(":domain"))
+    implementation(project(":dataa"))
 
     androidTestImplementation(libs.androidx.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)
