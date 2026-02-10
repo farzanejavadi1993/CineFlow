@@ -17,7 +17,7 @@ fun TrendingScreenFake(state: TrendingState) {
             CircularProgressIndicator(modifier = Modifier.testTag("loading"))
         }
         state.movies.isEmpty() -> {
-            Text("فیلمی برای نمایش وجود ندارد.")
+            Text("There is no movie to show.")
         }
         else -> {
             LazyColumn {

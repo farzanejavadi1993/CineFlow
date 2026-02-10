@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fermer.domain.usecase.GetWatchlistUseCase
 import com.fermer.domain.usecase.RemoveFromWatchlistUseCase
-import com.fermer.watchlist.WatchlistIntent
+import com.fermer.watchlist.state.WatchlistIntent
 import com.fermer.watchlist.state.WatchlistState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

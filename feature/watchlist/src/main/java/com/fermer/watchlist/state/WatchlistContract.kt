@@ -7,3 +7,8 @@ data class WatchlistState(
     val movies: List<Movie> = emptyList(),
     val error: String? = null
 )
+
+sealed interface WatchlistIntent {
+    data object LoadWatchlist : WatchlistIntent
+    data class RemoveMovie(val movieId: Int) : WatchlistIntent
+}

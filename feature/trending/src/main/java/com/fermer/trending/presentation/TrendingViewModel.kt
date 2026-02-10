@@ -2,7 +2,7 @@ package com.fermer.trending.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fermer.domain.usecase.GetTrendingMoviesUseCase
-import com.fermer.trending.TrendingIntent
+import com.fermer.trending.state.TrendingIntent
 import com.fermer.trending.state.TrendingState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

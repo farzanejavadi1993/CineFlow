@@ -23,12 +23,10 @@ class ThemeToggleTest {
             )
         }
 
-        // دکمه تم لایت دیده بشه اول
         composeTestRule.onNodeWithContentDescription("Toggle Theme").assertIsDisplayed()
 
-        // کلیک کنیم
         composeTestRule.onNodeWithContentDescription("Toggle Theme").performClick()
-        // دوباره وجود داشته باشه (state جدید)
+
         composeTestRule.onNodeWithContentDescription("Toggle Theme").assertIsDisplayed()
     }
 }

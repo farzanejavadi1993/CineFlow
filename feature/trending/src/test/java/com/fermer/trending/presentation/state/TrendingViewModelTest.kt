@@ -5,8 +5,8 @@ import app.cash.turbine.test
 import com.fermer.domain.model.Movie
 import com.fermer.domain.usecase.GetTrendingMoviesUseCase
 import com.fermer.testutils.MainDispatcherRule
-import com.fermer.trending.TrendingIntent
 import com.fermer.trending.presentation.TrendingViewModel
+import com.fermer.trending.state.TrendingIntent
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi

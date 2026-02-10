@@ -18,11 +18,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.fermer.trending.TrendingIntent
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 import com.fermer.trending.R
 import com.fermer.trending.component.TrendingItem
+import com.fermer.trending.state.TrendingIntent
 
 @Composable
 fun TrendingScreen(

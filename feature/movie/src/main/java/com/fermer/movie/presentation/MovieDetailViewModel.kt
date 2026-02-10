@@ -7,7 +7,6 @@ import com.fermer.domain.usecase.AddToWatchlistUseCase
 import com.fermer.domain.usecase.GetMovieUseCase
 import com.fermer.domain.usecase.IsInWatchlistUseCase
 import com.fermer.domain.usecase.RemoveFromWatchlistUseCase
-import com.fermer.movie.MovieDetailIntent
 import com.fermer.movie.state.MovieDetailState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

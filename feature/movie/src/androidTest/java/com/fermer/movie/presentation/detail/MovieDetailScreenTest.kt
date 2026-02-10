@@ -17,9 +17,9 @@ class MovieDetailScreenTest {
 
     private val fakeMovie = Movie(
         id = 1,
-        title = "فیلم تستی",
+        title = "movie",
         posterUrl = "/poster.jpg",
-        overview = "این یک توضیح تستی برای فیلم است.",
+        overview = "description",
         rating = 8.0,
         releaseDate = "2024-01-01"
     )
@@ -34,10 +34,10 @@ class MovieDetailScreenTest {
             )
         }
 
-        composeTestRule.onNodeWithText("فیلم تستی").assertIsDisplayed()
-        composeTestRule.onNodeWithText("تاریخ انتشار: 2024-01-01").assertIsDisplayed()
-        composeTestRule.onNodeWithText("امتیاز: 8.0").assertIsDisplayed()
-        composeTestRule.onNodeWithText("این یک توضیح تستی برای فیلم است.").assertIsDisplayed()
+        composeTestRule.onNodeWithText("movie").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Release Date: 2024-01-01").assertIsDisplayed()
+        composeTestRule.onNodeWithText("8.0").assertIsDisplayed()
+        composeTestRule.onNodeWithText("description").assertIsDisplayed()
     }
 
     @Test
@@ -50,7 +50,7 @@ class MovieDetailScreenTest {
             )
         }
 
-        composeTestRule.onNodeWithText("افزودن به علاقه‌مندی‌ها 🤍").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Add to watchlist 🤍").assertIsDisplayed()
     }
 
     @Test
@@ -63,7 +63,7 @@ class MovieDetailScreenTest {
             )
         }
 
-        composeTestRule.onNodeWithText("حذف از علاقه‌مندی‌ها ❤️").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Remove from watchlist ❤️").assertIsDisplayed()
     }
 
     @Test
@@ -78,7 +78,7 @@ class MovieDetailScreenTest {
             )
         }
 
-        composeTestRule.onNodeWithText("افزودن به علاقه‌مندی‌ها 🤍").performClick()
+        composeTestRule.onNodeWithText("Add to watchlist 🤍").performClick()
         assert(toggled)
     }
 }

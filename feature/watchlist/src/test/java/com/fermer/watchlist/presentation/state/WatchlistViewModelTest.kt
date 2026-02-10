@@ -10,8 +10,8 @@ import org.junit.Rule
 import com.fermer.domain.usecase.GetWatchlistUseCase
 import com.fermer.domain.usecase.RemoveFromWatchlistUseCase
 import com.fermer.testutils.MainDispatcherRule
-import com.fermer.watchlist.WatchlistIntent
 import com.fermer.watchlist.presentation.WatchlistViewModel
+import com.fermer.watchlist.state.WatchlistIntent
 import io.mockk.*
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf

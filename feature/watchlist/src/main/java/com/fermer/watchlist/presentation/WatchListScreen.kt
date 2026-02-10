@@ -17,8 +17,8 @@ import androidx.navigation.NavController
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import com.fermer.watchlist.R
-import com.fermer.watchlist.WatchlistIntent
 import com.fermer.watchlist.component.WatchlistItem
+import com.fermer.watchlist.state.WatchlistIntent
 
 @Composable
 fun WatchlistScreen(

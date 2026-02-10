@@ -60,7 +60,8 @@ class MovieDetailViewModelTest {
         viewModel.checkWatchlist(1)
 
         viewModel.state.test {
-            assertEquals(MovieDetailState(movie = Movie(0), isSaved = true),
+            assertEquals(
+                MovieDetailState(movie = Movie(0), isSaved = true),
                 awaitItem())
             cancel()
 

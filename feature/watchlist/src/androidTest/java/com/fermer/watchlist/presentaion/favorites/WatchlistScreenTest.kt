@@ -4,8 +4,8 @@ package com.fermer.watchlist.presentaion.favorites
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import com.fermer.domain.model.Movie
-import com.fermer.watchlist.state.WatchlistState
 import com.fermer.watchlist.component.WatchlistItem
+import com.fermer.watchlist.state.WatchlistState
 import org.junit.Rule
 import org.junit.Test
 
@@ -84,7 +84,7 @@ class WatchlistItemTest {
             WatchlistScreenFake(state = emptyState)
         }
 
-        composeTestRule.onNodeWithText("هیچ فیلمی در علاقه‌مندی‌ها نیست.").assertIsDisplayed()
+        composeTestRule.onNodeWithText("There are no movies in favorites.").assertIsDisplayed()
     }
 
     @Test
@@ -92,18 +92,18 @@ class WatchlistItemTest {
         val movies = listOf(
             Movie(
                 1,
-                "فیلم تستی ۱",
+                "test1",
                 "/poster1.jpg",
-                "توضیح",
+                "description1",
                 7.1,
                 "2023-01-01"
             ),
 
             Movie(
                 2,
-                "فیلم تستی ۲",
+                "test2",
                 "/poster2.jpg",
-                "توضیح",
+                "description2",
                 6.8,
                 "2023-02-02"
             )
@@ -114,7 +114,7 @@ class WatchlistItemTest {
             WatchlistScreenFake(state = state)
         }
 
-        composeTestRule.onNodeWithText("فیلم تستی ۱").assertIsDisplayed()
-        composeTestRule.onNodeWithText("فیلم تستی ۲").assertIsDisplayed()
+        composeTestRule.onNodeWithText("test1").assertIsDisplayed()
+        composeTestRule.onNodeWithText("test2").assertIsDisplayed()
     }
 }

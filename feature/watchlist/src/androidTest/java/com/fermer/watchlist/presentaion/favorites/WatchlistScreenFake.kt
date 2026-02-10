@@ -4,15 +4,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.fermer.watchlist.state.WatchlistState
 import com.fermer.watchlist.component.WatchlistItem
+import com.fermer.watchlist.state.WatchlistState
 
 @Composable
 fun WatchlistScreenFake(state: WatchlistState) {
     if (state.isLoading) {
         CircularProgressIndicator()
     } else if (state.movies.isEmpty()) {
-        Text("هیچ فیلمی در علاقه‌مندی‌ها نیست.")
+        Text("There are no movies in favorites.")
     } else {
         LazyColumn {
             items(state.movies.size) { movie ->

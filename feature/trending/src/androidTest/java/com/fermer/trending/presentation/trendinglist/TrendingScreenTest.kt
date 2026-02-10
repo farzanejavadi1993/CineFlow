@@ -32,7 +32,7 @@ class TrendingScreenTest {
             TrendingScreenFake(state = TrendingState(movies = emptyList(), isLoading = false))
         }
 
-        composeTestRule.onNodeWithText("فیلمی برای نمایش وجود ندارد.").assertIsDisplayed()
+        composeTestRule.onNodeWithText("There is no movie to show.").assertIsDisplayed()
     }
 
     @Test
