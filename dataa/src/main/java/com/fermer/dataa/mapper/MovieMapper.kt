@@ -2,6 +2,7 @@ package com.fermer.dataa.mapper
 
 import com.fermer.dataa.local.entity.MovieEntity
 import com.fermer.dataa.remote.model.MovieDto
+import com.fermer.dataa.remote.model.SearchMovieResponse
 import com.fermer.domain.model.Movie
 
 fun MovieDto.toMovie(): Movie {
@@ -32,3 +33,4 @@ fun Movie.toEntity(): MovieEntity = MovieEntity(
     rating = rating,
     releaseDate = releaseDate
 )
+

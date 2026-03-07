@@ -10,11 +10,16 @@ class TrendingRepositoryImpl @Inject constructor(
     private val api: MovieApiService
 ) : TrendingRepository {
 
-    override suspend fun getTrendingMovies(): List<Movie> {
+    override suspend fun getTrendingMovies(page: Int): List<Movie> {
         return api.getPopularMovies().results.map { it.toMovie() }
     }
 
     override suspend fun getMovie(movieId: Int): Movie {
         return api.getMovie(movieId).toMovie()
+    }
+
+
+    override suspend fun searchMovies(query: String, page: Int): List<Movie> {
+        return api.searchMovie(query, page = page).results.map { it.toMovie() }
     }
 }

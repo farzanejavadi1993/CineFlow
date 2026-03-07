@@ -54,6 +54,10 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
 
+    // Paging
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.rxjava)
+
     implementation(project(":domain"))
 
     testImplementation(libs.junit)

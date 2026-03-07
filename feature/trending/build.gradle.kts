@@ -51,6 +51,11 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
+    // Paging
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.rxjava)
+
+
     implementation(project(":domain"))
     implementation(project(":dataa"))
 

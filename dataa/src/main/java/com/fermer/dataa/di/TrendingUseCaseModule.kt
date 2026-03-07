@@ -2,7 +2,10 @@ package  com.fermer.dataa.di
 
 import com.fermer.domain.usecase.GetTrendingMoviesUseCase
 import com.fermer.domain.repository.TrendingRepository
+import com.fermer.domain.repository.WatchlistRepository
 import com.fermer.domain.usecase.GetMovieUseCase
+import com.fermer.domain.usecase.IsInWatchlistUseCase
+import com.fermer.domain.usecase.SearchMoviesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,4 +25,9 @@ object TrendingUseCaseModule {
     @ViewModelScoped
     fun provideGetMovieUseCase(repository: TrendingRepository): GetMovieUseCase =
         GetMovieUseCase(repository)
+
+    @Provides
+    @ViewModelScoped
+    fun provideSearchMoviesUseCase(repository: TrendingRepository): SearchMoviesUseCase =
+        SearchMoviesUseCase(repository)
 }
